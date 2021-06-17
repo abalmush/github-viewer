@@ -1,4 +1,5 @@
 import React from 'react';
+import LoadMore from './components/Loading';
 import { useGithubRepositoriesQuery } from './hooks';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
   return (
     <div className="App">
       {JSON.stringify(data)}
+      <LoadMore />
     </div>
   );
 }
