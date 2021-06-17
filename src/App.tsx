@@ -1,14 +1,8 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
-import { withApollo } from './container';
-import { FETCH_REPOS_QUERY } from './queries';
+import { useGithubRepositoriesQuery } from './hooks';
 
 function App() {
-  const { loading, error, data } = useQuery(FETCH_REPOS_QUERY, {
-    variables: {
-      login: process.env.REACT_APP_GITHUB_USER || ''
-    }
-  });
+  const { loading, error, data } = useGithubRepositoriesQuery();
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
@@ -20,4 +14,4 @@ function App() {
   );
 }
 
-export default withApollo(App);
+export default App;
