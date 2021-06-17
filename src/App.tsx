@@ -1,18 +1,21 @@
 import React from 'react';
-import LoadMore from './components/Loading';
+import { Card, Container } from '@material-ui/core';
 import { useGithubRepositoriesQuery } from './hooks';
+import RepositoriesList from './components/RepositoriesList';
+import Loading from './components/Loading';
 
 function App() {
-  const { loading, error, data } = useGithubRepositoriesQuery();
+  const { loading, error } = useGithubRepositoriesQuery();
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error</p>;
+  if (loading) return <Loading />;
+  if (error) return <p>Error :(</p>;
 
   return (
-    <div className="App">
-      {JSON.stringify(data)}
-      <LoadMore />
-    </div>
+    <Container maxWidth="sm">
+      <Card variant="outlined">
+        <RepositoriesList />
+      </Card>
+    </Container>
   );
 }
 
