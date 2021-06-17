@@ -1,5 +1,3 @@
 import withApollo from './withApollo';
 
-export {
-    withApollo
-}
+export { withApollo };

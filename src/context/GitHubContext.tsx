@@ -8,10 +8,10 @@ export interface GitHubState extends UserData {
 }
 
 export const initialGitHubData: GitHubState = {
-    id: '',
-    totalRepositoriesCount: 0,
-    repositories: [],
-    currentCursor: ''
+  id: '',
+  totalRepositoriesCount: 0,
+  repositories: [],
+  currentCursor: '',
 };
 
 const GitHubStateContext = React.createContext<GitHubState | undefined>(
@@ -32,7 +32,7 @@ const GitHubContextProvider: React.FC<{}> = ({ children }) => {
       </GitHubDispatchContext.Provider>
     </GitHubStateContext.Provider>
   );
-}
+};
 
 function useGitHubState(): GitHubState {
   const context = useContext(GitHubStateContext);
@@ -60,7 +60,4 @@ function useGitHub(): [GitHubState, Dispatch] {
 
 const GitHubProvider = withApollo(GitHubContextProvider);
 
-export {
-  GitHubProvider,
-  useGitHub
-};
+export { GitHubProvider, useGitHub };

@@ -1,5 +1,3 @@
 import useGithubRepositoriesQuery from './useGithubRepositoriesQuery';
 
-export {
-    useGithubRepositoriesQuery
-};
+export { useGithubRepositoriesQuery };
